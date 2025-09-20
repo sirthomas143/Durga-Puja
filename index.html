@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Dashera 2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(to bottom, #ff9933, #ffffff, #138808);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .flower {
+            position: absolute;
+            font-size: 24px;
+            color: #ff9933;
+            opacity: 0.6;
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        @keyframes diyaFlicker {
+            0%, 100% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.05); }
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 20px;
+            background: linear-gradient(to right, #ff9933, #138808);
+            color: white;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .image-container {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            border: 5px solid #ff9933;
+            object-fit: contain;
+        }
+        
+        .quote {
+            text-align: center;
+            padding: 20px;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #333;
+            background-color: #f8f8f8;
+            margin: 0 20px;
+            border-radius: 10px;
+            border-left: 5px solid #138808;
+            border-right: 5px solid #ff9933;
+        }
+        
+        .music-player {
+            width: 100%;
+            padding: 30px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #f1f1f1, #e1e1e1);
+        }
+        
+        .music-title {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        audio {
+            width: 80%;
+            max-width: 400px;
+            height: 40px;
+            margin: 15px 0;
+            border-radius: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .greeting {
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 1.5rem;
+            color: #ff9933;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .signature {
+            text-align: center;
+            padding: 20px;
+            font-size: 1.3rem;
+            color: #138808;
+            font-weight: bold;
+        }
+        
+        .countdown {
+            text-align: center;
+            padding: 15px;
+            background: linear-gradient(to right, #138808, #ff9933);
+            color: white;
+            margin: 10px 20px;
+            border-radius: 10px;
+        }
+        
+        .countdown-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .countdown-unit {
+            background: white;
+            color: #138808;
+            padding: 10px;
+            border-radius: 8px;
+            min-width: 70px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        
+        .countdown-number {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .countdown-label {
+            font-size: 0.8rem;
+        }
+        
+        /* WhatsApp Share Button Styles */
+        .whatsapp-share {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .whatsapp-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .whatsapp-button:active {
+            transform: translateY(0);
+        }
+        
+        .whatsapp-icon {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #555;
+            font-size: 0.9rem;
+            margin-top: auto;
+            width: 100%;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .quote {
+                font-size: 1rem;
+            }
+            
+            .greeting {
+                font-size: 1.2rem;
+            }
+            
+            .countdown-timer {
+                flex-wrap: wrap;
+            }
+            
+            .countdown-unit {
+                min-width: 60px;
+            }
+            
+            .whatsapp-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration" id="decoration"></div>
+    
+    <div class="container">
+        <header>
+            <h1>शुभ दशहरा</h1>
+            <p class="subtitle">Celebrating the victory of good over Evil</p>
+        </header>
+        
+        <div class="countdown">
+            <div class="countdown-title">Countdown to Dashera 2025</div>
+            <div class="countdown-timer">
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="days">00</div>
+                    <div class="countdown-label">Days</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-label">Hours</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-label">Minutes</div>
+                </div>
+                <div class="countdown-unit">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="image-container">
+            <img src="/storage/706C-7DFD/pngtree-goddess-durga-killing-mahishasura-happy-navratri-and-puja-festival-png-image_8544294.png" alt="Maa Durga Illustration">
+        </div>
+        
+        <div class="quote">
+            "May the blessings of Maa Durga fill your life with happiness, prosperity, and success. Happy Dashera!"
+        </div>
+        
+        <!-- WhatsApp Share Button -->
+        <div class="whatsapp-share">
+            <a id="whatsapp-share-btn" class="whatsapp-button" target="_blank">
+                <i class="fab fa-whatsapp whatsapp-icon"></i> Share on WhatsApp
+            </a>
+        </div>
+        
+        <div class="music-player">
+            <div class="music-title">Devotional Song - Jai Ambe Gauri</div>
+            <audio controls>
+                <source src="/storage/706C-7DFD/ssvid.net--Bhor-Bhai-Din-Chadh-Gaya-Meri-Ambe-Aarti-Tulsi-Kumar_128Kbps.m4a.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <p>Click play to listen to devotional music</p>
+        </div>
+        
+        <div class="greeting">
+            May the divine blessings of Maa Durga bring joy and prosperity to your life
+        </div>
+        
+        <div class="signature">
+        </div>
+    </div>
+    
+    <footer>
+        <p>Wishing you and your family a Advance Happy Dashera!</p>
+        <p>© 2025 Dave Dashera Greetings</p>
+    </footer>
+
+    <script>
+        // Create decorative elements
+        function createDecorations() {
+            const decoration = document.getElementById('decoration');
+            const symbols = ['🪔', '🌸', '🪷', '✨', '🪔', '🌸', '🪷', '✨'];
+            
+            for (let i = 0; i < 20; i++) {
+                const symbol = document.createElement('div');
+                symbol.className = 'flower';
+                symbol.textContent = symbols[i % symbols.length];
+                symbol.style.left = `${Math.random() * 100}%`;
+                symbol.style.top = `${Math.random() * 100}%`;
+                symbol.style.animationDelay = `${Math.random() * 5}s`;
+                decoration.appendChild(symbol);
+            }
+        }
+        
+        // Countdown timer
+        function updateCountdown() {
+            // Set Dashera 2025 date: October 2, 2025
+            const dasheraDate = new Date('October 2, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = dasheraDate - now;
+            
+            if (distance > 0) {
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            } else {
+                document.querySelector('.countdown-timer').innerHTML = 
+                    '<div style="font-size: 1.5rem; font-weight: bold;">Happy Dashera!</div>';
+            }
+        }
+        
+        // WhatsApp Share Functionality
+        function setupWhatsAppShare() {
+            const shareBtn = document.getElementById('whatsapp-share-btn');
+            const shareText = "May the blessings of Maa Durga fill your life with happiness, prosperity, and success. Happy Dashera! 🪔🎉";
+            const shareUrl = "https://example.com/dashera-greetings"; // Replace with your actual URL
+            
+            const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(shareText + " " + shareUrl)}`;
+            shareBtn.href = whatsappUrl;
+        }
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            createDecorations();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            setupWhatsAppShare();
+        });
+    </script>
+</body>
+</html>
